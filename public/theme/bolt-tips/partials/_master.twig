@@ -20,8 +20,10 @@
                 {{- ' | ' ~ config.get('general/payoff') -}}
             {%- endif -%}
         </title>
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i|Open+Sans:400,400i&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,400i&display=swap" rel="stylesheet">
+{#        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i|Open+Sans:400,400i&display=swap" rel="stylesheet">#}
         <link rel="stylesheet" href="{{ asset('assets/leaf.css') }}">
+        {% include 'partials/_tracker.html.twig' %}
     </head>
     <body class="{{ aside }}">
 
