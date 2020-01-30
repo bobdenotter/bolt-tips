@@ -460,16 +460,16 @@
         },
         {
             "name": "bolt/newswidget",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bolt/newswidget.git",
-                "reference": "22c2eaaebe07ba49636a4bf6657d4273f1ab1b7f"
+                "reference": "533d8f04ef6d940ad8c38d239b32dfa56e82fbfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bolt/newswidget/zipball/22c2eaaebe07ba49636a4bf6657d4273f1ab1b7f",
-                "reference": "22c2eaaebe07ba49636a4bf6657d4273f1ab1b7f",
+                "url": "https://api.github.com/repos/bolt/newswidget/zipball/533d8f04ef6d940ad8c38d239b32dfa56e82fbfd",
+                "reference": "533d8f04ef6d940ad8c38d239b32dfa56e82fbfd",
                 "shasum": ""
             },
             "require": {
@@ -499,7 +499,7 @@
                 }
             ],
             "description": "📰 A simple Widget Extension to display the latest Bolt news on the dashboard.",
-            "time": "2020-01-10T12:57:36+00:00"
+            "time": "2020-01-29T16:49:25+00:00"
         },
         {
             "name": "bolt/themes",
@@ -6043,16 +6043,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.6.0",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "952f45d1c5077e658cb16a61d11603bee873f968"
+                "reference": "e4f5a2653ca503782a31486198bd1dd1c9a47f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/952f45d1c5077e658cb16a61d11603bee873f968",
-                "reference": "952f45d1c5077e658cb16a61d11603bee873f968",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/e4f5a2653ca503782a31486198bd1dd1c9a47f83",
+                "reference": "e4f5a2653ca503782a31486198bd1dd1c9a47f83",
                 "shasum": ""
             },
             "require": {
@@ -6088,7 +6088,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-            "time": "2019-12-13T18:05:11+00:00"
+            "time": "2020-01-30T12:06:45+00:00"
         },
         {
             "name": "symfony/form",
@@ -9375,16 +9375,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v6.12.0",
+            "version": "v6.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "b0263d1e2931a272dcf091f1481291ea8ec3ec14"
+                "reference": "17046ff310e1c6a70c8c1cd3743b3631b7e76aee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/b0263d1e2931a272dcf091f1481291ea8ec3ec14",
-                "reference": "b0263d1e2931a272dcf091f1481291ea8ec3ec14",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/17046ff310e1c6a70c8c1cd3743b3631b7e76aee",
+                "reference": "17046ff310e1c6a70c8c1cd3743b3631b7e76aee",
                 "shasum": ""
             },
             "require": {
@@ -9421,7 +9421,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2020-01-14T17:16:45+00:00"
+            "time": "2020-01-28T19:25:21+00:00"
         },
         {
             "name": "twig/twig",
