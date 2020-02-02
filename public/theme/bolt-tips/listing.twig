@@ -26,7 +26,11 @@
                     </a>
                 {% endif %}
 
-                <p>{{ record|excerpt(300, false, search|default('')) }}</p>
+                {% if record.teaser %}
+                    {{ record.teaser }}
+                {% else %}
+                    <p>{{ record|excerpt(300, false, search|default('')) }}</p>
+                {% endif %}
 
                 {% include 'partials/_recordfooter.twig' with { 'record': record } %}
 
