@@ -34,6 +34,9 @@
     "bolt/themes": {
         "version": "3.0.0"
     },
+    "brick/math": {
+        "version": "0.8.15"
+    },
     "cocur/slugify": {
         "version": "v3.2"
     },
@@ -157,6 +160,9 @@
     "intervention/image": {
         "version": "2.4.2"
     },
+    "ivovalchev/image-extension": {
+        "version": "1.0.0"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -223,14 +229,11 @@
     "pagerfanta/pagerfanta": {
         "version": "v2.0.1"
     },
-    "paragonie/random_compat": {
-        "version": "v9.99.99"
-    },
     "peterkahl/country-code-to-emoji-flag": {
         "version": "v0.9.1"
     },
     "php": {
-        "version": "7.2"
+        "version": "7.4"
     },
     "php-translation/common": {
         "version": "1.0.0"
@@ -285,6 +288,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
+    },
+    "ramsey/collection": {
+        "version": "1.0.1"
     },
     "ramsey/uuid": {
         "version": "3.9.2"

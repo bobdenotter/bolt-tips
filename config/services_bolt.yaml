@@ -10,3 +10,6 @@ services:
     Bolt\NewsWidget\:
         resource: '../vendor/bolt/newswidget/src/*'
         exclude: '../vendor/bolt/newswidget/src/{Entity,Exception}'
+    IvoValchev\ImageExtension\:
+        resource: '../vendor/ivovalchev/image-extension/src/*'
+        exclude: '../vendor/ivovalchev/image-extension/src/{Entity,Exception}'

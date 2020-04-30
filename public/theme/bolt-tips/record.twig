@@ -4,7 +4,13 @@
 
     <h1 class="title">{{ record|title }}</h1>
 
-    {% include 'partials/_image.twig' with ({'image': record|image}) %}
+    {{ record.teaser }}
+
+{#    {% include 'partials/_image.twig' with ({'image': record|image}) %}#}
+
+{#    {% if record|image %}#}
+        {{ responsive_image(record|image, 'foo') }}
+{#    {% endif %}#}
 
     {# Output all fields, in the order as defined in the content type.
        To change the generated html and configure the options, see:
