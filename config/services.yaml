@@ -20,6 +20,7 @@ services:
             $locales: '%app_locales%'
             $emailSender: '%app.notifications.email_sender%'
             $projectDir: '%kernel.project_dir%'
+            $defaultLocale: '%locale%'
             $publicFolder: '%bolt.public_folder%'
             $tablePrefix: '%bolt.table_prefix%'
 
@@ -40,12 +41,6 @@ services:
     Bolt\Controller\:
         resource: '../vendor/bolt/core/src/Controller'
         tags: ['controller.service_arguments']
-
-    # Override Symfony's error pages (so we can show custom 404's)
-    Bolt\Controller\ExceptionController:
-        public: true
-        arguments:
-            $debug: '%kernel.debug%'
 
     Bolt\Doctrine\TablePrefix:
         tags:
@@ -100,3 +95,10 @@ services:
 
     Twig\Extension\StringLoaderExtension: ~
 
+    Symfony\Component\ErrorHandler\ErrorRenderer\ErrorRendererInterface: '@error_handler.error_renderer.html'
+
+    Squirrel\TwigPhpSyntax\PhpSyntaxExtension: ~
+
+    Bolt\Event\Listener\FieldFillListener:
+        tags:
+            - { name: doctrine.event_listener, event: postLoad }
