@@ -16,6 +16,9 @@
     "babdev/pagerfanta-bundle": {
         "version": "v2.4.2"
     },
+    "beberlei/doctrineextensions": {
+        "version": "v1.2.7"
+    },
     "bobdenotter/bolt-leaf-theme": {
         "version": "1.0.2"
     },
@@ -240,6 +243,9 @@
     },
     "pagerfanta/pagerfanta": {
         "version": "v2.0.1"
+    },
+    "paragonie/random_compat": {
+        "version": "v9.99.99"
     },
     "peterkahl/country-code-to-emoji-flag": {
         "version": "v0.9.1"
@@ -532,6 +538,9 @@
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
+    },
+    "symfony/polyfill-php70": {
+        "version": "v1.18.0"
     },
     "symfony/polyfill-php72": {
         "version": "v1.10.0"

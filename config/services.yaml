@@ -3,7 +3,7 @@
 parameters:
     locale: 'en'
     # This parameter defines the codes of the locales (languages) enabled in the application
-    app_locales: en|nl|es|fr|de|hu|pl|it|pt_BR
+    app_locales: en|nl|es|fr|de|pl|it|hu|pt_BR|ja|nb|nn|nl_NL|nl_BE|is|ru
     app.notifications.email_sender: anonymous@example.com
     bolt.table_prefix: bolt_
     bolt.backend_url: /bolt
@@ -18,9 +18,9 @@ services:
                             # The best practice is to be explicit about your dependencies anyway.
         bind:               # defines the scalar arguments once and apply them to any service defined/created in this file
             $locales: '%app_locales%'
+            $defaultLocale: '%locale%'
             $emailSender: '%app.notifications.email_sender%'
             $projectDir: '%kernel.project_dir%'
-            $defaultLocale: '%locale%'
             $publicFolder: '%bolt.public_folder%'
             $tablePrefix: '%bolt.table_prefix%'
 
@@ -34,7 +34,7 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     Bolt\:
         resource: '../vendor/bolt/core/src/*'
-        exclude: '../vendor/bolt/core/src/{Entity,Exception,Kernel.php}'
+        exclude: '../vendor/bolt/core/src/{Entity,Exception,Migrations,Kernel.php}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
@@ -50,6 +50,10 @@ services:
         tags:
             - { name: doctrine.event_listener, event: postLoad }
             - { name: doctrine.event_listener, event: prePersist }
+
+    Bolt\Event\Listener\FieldFillListener:
+        tags:
+            - { name: doctrine.event_listener, event: postLoad }
 
     Bolt\Event\Listener\FieldDiscriminatorListener:
         tags:
@@ -86,6 +90,11 @@ services:
     Bolt\Twig\DumpExtension:
         arguments: ["%kernel.environment%"]
 
+    Bolt\Api\Extensions\ContentExtension:
+        tags:
+            - { name: api_platform.doctrine.orm.query_extension.collection }
+            - { name: api_platform.doctrine.orm.query_extension.item }
+
     Doctrine\ORM\Query\Expr: ~
 
     monolog.processor.request:
@@ -98,7 +107,3 @@ services:
     Symfony\Component\ErrorHandler\ErrorRenderer\ErrorRendererInterface: '@error_handler.error_renderer.html'
 
     Squirrel\TwigPhpSyntax\PhpSyntaxExtension: ~
-
-    Bolt\Event\Listener\FieldFillListener:
-        tags:
-            - { name: doctrine.event_listener, event: postLoad }
