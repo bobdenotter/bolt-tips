@@ -11,6 +11,11 @@
     <h4>{{ block|title }}</h4>
     <p>{{ block.content|default(block|excerpt) }}</p>
 
+    <form method="get" action="{{ path('search') }}" id="quicksearch-inline" enctype="text/plain" role="search">
+        <label for="quicksearch">Quick search:</label>
+        <input type="search" value="{{ searchTerm|default() }}" placeholder="{{ __('general.phrase.search') }} {{ __('general.phrase.search-ellipsis') }}" name="searchTerm" class="input" id="quicksearch">
+    </form>
+
     {% set edit_link = block|edit_link %}
     {% set content_link = block|link %}
     {% if content_link or edit_link %}
@@ -32,7 +37,7 @@
 
 {% endif %}
 
-    {% include 'helpers/_languageselect.html.twig' with {'type': 'list'} %}
+{#    {% include 'helpers/_languageselect.html.twig' with {'type': 'list'} %}#}
 
     {# The next section iterates over all of the content types, and prints a list
         of the five latest records of each of them. The 'magic' happens in the
@@ -45,7 +50,7 @@
 
     {% for ct in config.get('contenttypes')|filter(ct => not ct.viewless) %}
 
-        {% setcontent records = ct.slug ~ "/latest/3" %}
+        {% setcontent records = ct.slug latest limit 5 %}
 
         <h4>{{ __('contenttypes.generic.recent', {'%contenttypes%': ct.name}) }}</h4>
         <ul>

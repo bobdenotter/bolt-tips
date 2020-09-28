@@ -82,3 +82,11 @@ aside p, aside li {
     font-size: 90%;
     line-height: $baseline * 0.9;
 }
+
+#quicksearch-inline {
+    font-size: 90%;
+
+    input {
+        font-size: 90%;
+    }
+}
