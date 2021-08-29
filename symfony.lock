@@ -28,6 +28,9 @@
     "bobdenotter/weatherwidget": {
         "version": "1.0.0"
     },
+    "bobdenotter/yaml-migrations": {
+        "version": "1.1.0"
+    },
     "bolt/assets": {
         "version": "4.0.0-beta.2.3"
     },
@@ -97,6 +100,9 @@
     "doctrine/dbal": {
         "version": "v2.9.2"
     },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
+    },
     "doctrine/doctrine-bundle": {
         "version": "1.6",
         "recipe": {
@@ -127,6 +133,19 @@
             "src/DataFixtures/AppFixtures.php"
         ]
     },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "ee609429c9ee23e22d6fa5728211768f51ed2818"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
+    },
     "doctrine/event-manager": {
         "version": "v1.0.0"
     },
@@ -139,14 +158,14 @@
     "doctrine/lexer": {
         "version": "v1.0.1"
     },
+    "doctrine/migrations": {
+        "version": "3.2.1"
+    },
     "doctrine/orm": {
         "version": "v2.6.3"
     },
     "doctrine/persistence": {
         "version": "v1.1.0"
-    },
-    "doctrine/reflection": {
-        "version": "v1.0.0"
     },
     "doctrine/sql-formatter": {
         "version": "1.1.0"
@@ -172,6 +191,9 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.5"
+    },
     "fzaninotto/faker": {
         "version": "v1.8.0"
     },
@@ -184,11 +206,17 @@
     "ivovalchev/image-extension": {
         "version": "1.0.0"
     },
+    "jasny/twig-extensions": {
+        "version": "v1.3.0"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
     "justinrainbow/json-schema": {
         "version": "5.2.8"
+    },
+    "kevinlebrun/colors.php": {
+        "version": "0.4.1"
     },
     "knplabs/doctrine-behaviors": {
         "version": "v2.0.1"
@@ -201,6 +229,15 @@
     },
     "kylekatarnls/update-helper": {
         "version": "1.1.0"
+    },
+    "laminas/laminas-code": {
+        "version": "3.4.1"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.2.1"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
     },
     "league/flysystem": {
         "version": "1.0.50"
@@ -220,6 +257,12 @@
     "monolog/monolog": {
         "version": "1.24.0"
     },
+    "nategood/commando": {
+        "version": "0.4.0"
+    },
+    "nelexa/zip": {
+        "version": "3.3.3"
+    },
     "nelmio/cors-bundle": {
         "version": "1.5",
         "recipe": {
@@ -234,9 +277,6 @@
     },
     "nesbot/carbon": {
         "version": "1.36.2"
-    },
-    "nette/finder": {
-        "version": "v2.5.2"
     },
     "nette/utils": {
         "version": "v3.1.0"
@@ -304,6 +344,9 @@
     "psr/event-dispatcher": {
         "version": "1.0.0"
     },
+    "psr/http-factory": {
+        "version": "1.0.1"
+    },
     "psr/http-message": {
         "version": "1.0.1"
     },
@@ -347,18 +390,6 @@
         },
         "files": [
             "config/packages/sensio_framework_extra.yaml"
-        ]
-    },
-    "sensiolabs/security-checker": {
-        "version": "4.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.0",
-            "ref": "05daf6b214e54aed4089f3480f944a67ac3a7889"
-        },
-        "files": [
-            "config/packages/security_checker.yaml"
         ]
     },
     "siriusphp/upload": {
@@ -497,15 +528,6 @@
         "files": [
             "config/packages/mailer.yaml"
         ]
-    },
-    "symfony/maker-bundle": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
-        }
     },
     "symfony/mime": {
         "version": "v4.3.0"
@@ -723,11 +745,29 @@
     "symfony/yaml": {
         "version": "v4.2.3"
     },
-    "symplify/package-builder": {
-        "version": "v7.2.1"
+    "symfonycasts/reset-password-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "97c1627c0384534997ae1047b93be517ca16de43"
+        },
+        "files": [
+            "config/packages/reset_password.yaml"
+        ]
     },
     "tightenco/collect": {
         "version": "v5.8.2"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.3.1"
+    },
+    "twig/html-extra": {
+        "version": "v3.3.0"
+    },
+    "twig/intl-extra": {
+        "version": "v3.3.0"
     },
     "twig/twig": {
         "version": "v2.6.2"

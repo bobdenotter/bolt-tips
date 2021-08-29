@@ -3,8 +3,8 @@
     "license": "proprietary",
     "require": {
         "bobdenotter/weatherwidget": "^1.0",
-        "bolt/assets": "^4.0",
-        "bolt/core": "^4.0",
+        "bolt/assets": "^5.0",
+        "bolt/core": "^5.0",
         "bolt/newswidget": "^1.1",
         "bolt/themes": "^3.1",
         "symfony/flex": "^1.6",
@@ -17,28 +17,39 @@
             "App\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/",
+            "Bolt\\ComposerScripts\\": "vendor/bolt/core/bin/composer-script/"
+        }
+    },
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "scripts": {
-        "auto-scripts": {
-            "cache:clear --no-warmup": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
-            "bolt:copy-assets": "symfony-cmd"
-        },
-        "post-create-project-cmd": [
-            "php bin/post-create-project.php",
-            "php bin/console bolt:copy-themes"
+        "pre-install-cmd": [
+            "Bolt\\ComposerScripts\\ProjectEventHandler::preInstall"
         ],
         "post-install-cmd": [
-            "@auto-scripts",
-            "php bin/console extensions:configure --with-config",
-            "php bin/console bolt:info"
+            "Bolt\\ComposerScripts\\ProjectEventHandler::postInstall"
+        ],
+        "pre-update-cmd": [
+            "Bolt\\ComposerScripts\\ProjectEventHandler::preUpdate"
         ],
         "post-update-cmd": [
-            "@auto-scripts",
-            "php bin/console extensions:configure",
-            "php bin/console bolt:info"
-        ]
+            "Bolt\\ComposerScripts\\ProjectEventHandler::postUpdate"
+        ],
+        "post-create-project-cmd": [
+            "Bolt\\ComposerScripts\\ProjectEventHandler::postCreateProject"
+        ],
+        "pre-package-uninstall": [
+            "Bolt\\ComposerScripts\\ProjectEventHandler::prePackageUninstall"
+        ],
+        "lint": "@php vendor/bin/ecs check --no-progress-bar --no-interaction",
+        "lint:fix": "@php vendor/bin/ecs check --no-progress-bar --no-interaction --fix",
+        "phpstan": "@php vendor/bin/phpstan --memory-limit=1G analyse -c phpstan.neon src",
+        "auto-scripts": {
+
+        }
     },
     "extra": {
         "symfony": {
